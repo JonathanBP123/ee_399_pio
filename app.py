@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, send_file, render_template_string
 import wave
 import io
-import numpy as np
 import os
 import whisper
 from openai import OpenAI
