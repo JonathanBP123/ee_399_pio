@@ -16,24 +16,8 @@ const int server_port = 5000;
 String wifi_ssid = "Device-Northwestern";
 const char* server_ip = "10.105.34.52"; // computer's IPv4 address
 
-
 // Guest-Northwestern
 // const char* server_ip = "10.104.225.210"; // Guest-Northwestern
-
-// Phone hotspot
-// String wifi_ssid = "LightPhoneII";
-// String wifi_pwd = "jasGraq8";
-// const char* server_ip = "192.168.43.48"; // Phone hotspot | computer's IP address (not ESP's)
-
-// Home-1732
-// String wifi_ssid = "Home-1732";
-// String wifi_pwd = "Home1732!";
-// const char* server_ip = "10.0.0.31";
-
-// Coffee shops
-// String wifi_ssid = "Sawada Guest";
-// String wifi_pwd = "ilovecoffee";
-// const char* server_ip = "10.185.119.104";
 
 String websockets_server_address_test = "ws://" + String(server_ip) + ":" + String(server_port) + "/ws_audio";
 // String websockets_server_address_test = "ws://" + String(server_ip) + ":" + String(server_port) + "/wav_audio_send_test";

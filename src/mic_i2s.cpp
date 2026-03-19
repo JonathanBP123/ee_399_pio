@@ -258,11 +258,6 @@ void play_websocket_audio() {
         if (is_audio_done) {
             break;
         }
-
-        // if (millis() - last_packet_time > 2000) {
-        //     Serial.println("Timeout: No more audio data.");
-        //     break;
-        // }
     }
 
     Serial.println("TTS audio stream finished");

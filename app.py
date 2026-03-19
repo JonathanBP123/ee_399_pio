@@ -4,7 +4,6 @@ import io
 import os
 import whisper
 from openai import OpenAI
-from pathlib import Path
 from flask_sock import Sock
 import math
 import time
