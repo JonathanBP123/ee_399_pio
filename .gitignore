@@ -1,0 +1,11 @@
+.pio
+.vscode
+.venv
+include
+lib
+node_modules/
+test
+.env
+recorded_audio.wav
+recording.wav
+tts.wav

@@ -1,0 +1,60 @@
+<!-- <button onclick="retrieve_audio()">Upload and Play</button> -->
+<audio id="audioPlayer" controls></audio>
+
+<!-- Test -->
+<button onclick="trigger_file_picker()">Upload and Play</button>
+<input type="file" id="fileInput" accept="audio/*" style="display:none" />
+
+<script>
+    async function retrieve_audio() {
+
+        // GET WAV file
+        const response = await fetch('/finalize');
+
+        if (!response.ok) {
+            alert("No WAV file available yet.");
+            return;
+        }
+
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+
+        const player = document.getElementById('audioPlayer');
+        player.src = url;
+        player.play();
+    }
+</script>
+
+<!-- Test script -->
+<script>
+    function trigger_file_picker() {
+        document.getElementById('fileInput').click();
+    }
+    document.getElementById('fileInput').addEventListener('change', uploadAndPlay);
+
+    async function uploadAndPlay(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const response = await fetch('/test', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            alert("Upload failed.");
+            return;
+        }
+
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+
+        const player = document.getElementById('audioPlayer');
+        player.src = url;
+        player.play();
+    }
+
+</script>
